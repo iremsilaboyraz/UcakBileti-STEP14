@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class UcakBileti {
+    public static void main(String[] args){
+       int mesafe,yas,yolculuk;
+       double ücret=0.10,toplam;
+
+        Scanner input=new Scanner(System.in);
+
+        System.out.printf("Mesafeyi giriniz(km):");
+        mesafe= input.nextInt();
+
+        System.out.printf("Yaşınızı giriniz:");
+        yas=input.nextInt();
+
+        System.out.printf("Yolculuk tipini seçiniz 1 => Tek Yön , 2 => Gidiş-Dönüş  :");
+        yolculuk= input.nextInt();
+switch (yolculuk) {
+    case 1:
+        if (yas < 12) {
+            toplam = (mesafe * ücret) / 2;
+            System.out.println("Ödenecek tutar:" + toplam);
+
+        } else if (yas >= 12 && yas <= 24) {
+            toplam = (mesafe * ücret) * 0.90;
+            System.out.println("Ödenecek tutar:" + toplam);
+
+        } else if (yas > 65) {
+            toplam = (mesafe * ücret) * 0.70;
+            System.out.println("Ödenecek tutar:" + toplam);
+
+        } else {
+            toplam = (mesafe * ücret);
+            System.out.println("Ödenecek tutar:" + toplam);
+        }
+        break;
+    case 2:
+        if (yas < 12) {
+            toplam = ((mesafe * ücret) / 2)*0.8;
+            System.out.println("Ödenecek tutar:" + toplam);
+
+        } else if (yas >= 12 && yas <= 24) {
+            toplam = ((mesafe * ücret) * 0.90)*0.8;
+            System.out.println("Ödenecek tutar:" + toplam);
+
+        } else if (yas > 65) {
+            toplam = ((mesafe * ücret) * 0.70)*0.8;
+            System.out.println("Ödenecek tutar:" + toplam);
+
+        } else {
+            toplam = (mesafe * ücret)*0.8;
+            System.out.println("Ödenecek tutar:" + toplam);
+        }
+        break;
+
+    default:
+        System.out.printf("Hatalı veri girdiniz!");
+
+         }
+
+     }
+}
